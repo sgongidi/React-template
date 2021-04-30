@@ -1,3 +1,11 @@
 #testimonials {
     margin: 2rem;
 }
+
+.testimonial {
+    margin: 50px;
+}
+
+.author {
+    margin-bottom: 20px;
+}
