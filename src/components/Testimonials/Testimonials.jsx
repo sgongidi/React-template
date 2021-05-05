@@ -1,14 +1,20 @@
 import "./Testimonials.css";
+import { Card } from "react-bootstrap";
+import { testimonials, colors } from "../../config";
 
-// prop: testimonials = [testimonial]
 // testimonial: {author: "TESTIMONIAL_author", text: "TESTIMONIAL_TEXT"}
-const Testimonials = ({ testimonials }) => {
-    const elements = testimonials.map((testimonials) => <div className="testimonial">
-        <h3 className="author">{testimonials.author}</h3>
-        <p className="text">{testimonials.text}</p>
-        <br />
-    </div>)
-    return <div id="testimonials">Testimonials:{elements}</div>;
+const Testimonials = () => {
+    return <div id="testimonials">
+        <h2>Testimonials</h2>
+        {testimonials.map(testimonial => (
+            <Card className="testimonial shadow" key={testimonial.author} style={{backgroundColor: colors.secondary}}>
+            <Card.Body>
+                <p className="text">{testimonial.text}</p>
+                <footer className="author">-  {testimonial.author}</footer>
+            </Card.Body>
+            </Card>
+        ))}
+    </div>;
 }
 
 export default Testimonials;

@@ -1,19 +1,18 @@
 import "./Contact.css";
+import { Card } from "react-bootstrap";
+import { contact } from "../../config";
 
 const Contact = () => {
-  const email = "";
-  const phone = "";
-  const address1 = "";
-  const address2 = "";
   return (
-      <div id="contact">
-          <h1 id="contactTitle">Contact</h1>
-          <p><strong>Email: </strong>{email}</p>
-          <p><strong>Phone: </strong>{phone}</p>
-          <p><strong>Address:</strong></p>
-          <p>{address1}</p>
-          <p>{address2}</p>
-      </div>
+      <Card id="contact" className="shadow" style={{marginBottom: "15vh"}}>
+      <Card.Header id="contactTitle">Contact Us!</Card.Header>
+      <Card.Body>
+          <p><strong>Email: </strong>{contact.email}</p>
+          <p><strong>Phone: </strong>{contact.phone}</p>
+          <p><strong>Address: </strong><p>{contact.address1}<br />{contact.address2}</p></p>
+          
+      </Card.Body>
+      </Card>
   );
 };
 
